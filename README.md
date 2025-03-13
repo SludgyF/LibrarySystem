@@ -5,3 +5,7 @@ Adolfo Hernández Signoret - A01637184
 Arturo Ramos Martínez - A01643269
 Moisés Adrián Cortés Ramos - A01642492
 Bryan Ithan Landín Lara - A01636271
+
+Como ejecutar el proyecto
+javac -d bin -sourcepath src src/LibrarySystem.java
+java -cp bin LibrarySystem
