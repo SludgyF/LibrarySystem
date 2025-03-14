@@ -7,7 +7,8 @@
 - **Arturo Ramos Martínez** - A01643269
 - **Moisés Adrián Cortés Ramos** - A01642492
 - **Bryan Ithan Landín Lara** - A01636271
-**Descripcion del codigo**
+  
+## Descripcion del codigo**
 Este sistema es para gestionar una libreria, con las siguientes features:
 Book Management: Tenemos metodos para agregar libros, remover libros en base a una cantidad, mostrar los libros existentes y editar un libro (Puede ser cantidad, nombre, y autor)
 Patron Management: Se pueden registrar usuarios (patrons), ver los patrones existente y editarlos (Se puede editar nombre y contacto)
