@@ -26,6 +26,7 @@ public class PatronManager {
 
     public boolean editPatron(int patronId, String newContact, String newName) {
         for (Patron patron : patrons) {
+            // Se editan los patrones
             if (patron.getId() == patronId) {
                 patron.setName(newName);
                 patron.setContact(newContact);

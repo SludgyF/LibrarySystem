@@ -44,6 +44,7 @@ public class LibraryInventory {
 
     public boolean editBook(int isbn, int newQuantity, String newAuthor, String newTitle) {
         for (Book book : books) {
+            // Se editan los libros
             if (book.getIsbn() == isbn) {
                 book.setName(newTitle);
                 book.setAuthor(newAuthor);
