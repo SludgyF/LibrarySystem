@@ -32,6 +32,18 @@ public class Book {
     public void addQuantity(int amount) {
         quantity += amount;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+    
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    
     
     public void removeQuantity(int amount) {
         if (quantity >= amount) {

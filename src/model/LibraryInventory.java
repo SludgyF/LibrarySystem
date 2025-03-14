@@ -6,11 +6,12 @@ import java.util.HashMap;
 
 public class LibraryInventory {
     private List<Book> books;
+    // Usamos hashmap para los libros prestados
     private HashMap<Integer, List<String> > borrowwedBooks = new HashMap<>();
 
     public LibraryInventory() {
         books = new ArrayList<>();
-
+        // Libros de prueba
         books.add(new Book("Don Quijote de la Mancha","Miguel de Cervantes", 1111, 5));
         books.add(new Book("La Celestina","Fernando de Rojas", 2222, 8));
         books.add(new Book("La invencion de Morel","Adolfo Bioy Casares", 3333, 3));
@@ -41,10 +42,12 @@ public class LibraryInventory {
         System.out.println("Book not found in inventory");
     }
 
-    public boolean editBook(int isbn, int newQuantity) {
+    public boolean editBook(int isbn, int newQuantity, String newAuthor, String newTitle) {
         for (Book book : books) {
             if (book.getIsbn() == isbn) {
-                book.addQuantity(newQuantity - book.getQuantity());
+                book.setName(newTitle);
+                book.setAuthor(newAuthor);
+                book.setQuantity(newQuantity);
                 System.out.println("Book updated");
                 return true;
             }
@@ -55,6 +58,7 @@ public class LibraryInventory {
 
     public boolean borrowBook(int patronId, String tittle) {
         for (Book book : books) {
+            // Se busca el libro por nombre con equals
             if(book.getName().equalsIgnoreCase(tittle)) {
                 if(book.getQuantity() > 0) {
                     book.removeQuantity(1);
@@ -75,6 +79,7 @@ public class LibraryInventory {
     }
 
     public void displayBorrowed(int patronId) {
+        // Se corroborra que el id tenga libros prestados
         if (!borrowwedBooks.containsKey(patronId)) {
             System.out.println("This patron has no borrowed books");
             return;
@@ -86,6 +91,7 @@ public class LibraryInventory {
     }
 
     public boolean returnBook(int patronId, String tittle) {
+        // Se llama al hasmap para revisar si el patron tiene el libro con cierto titulo prestado
         if (borrowwedBooks.containsKey(patronId) && borrowwedBooks.get(patronId).contains(tittle)) {
             borrowwedBooks.get(patronId).remove(tittle);
             if (borrowwedBooks.get(patronId).isEmpty()){

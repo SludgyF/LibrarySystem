@@ -12,6 +12,7 @@ public class LibrarySystem {
         boolean running = true;
 
         while (running) {
+            // Menu de opciones
             System.out.println("==== Library Management System ====");  
             System.out.println("1. Add book");  
             System.out.println("2. Remove book");
@@ -58,10 +59,14 @@ public class LibrarySystem {
                     System.out.print("Enter ISB number: ");
                     int editIsbn = scanner.nextInt();
                     scanner.nextLine();
+                    System.out.print("Enter new author: ");
+                    String newTitle = scanner.nextLine();
+                    System.out.print("Enter new title: ");
+                    String newAuthor = scanner.nextLine();
                     System.out.print("Enter new quantity: ");
                     int newQuantity = scanner.nextInt();
 
-                    library.editBook(editIsbn, newQuantity);
+                    library.editBook(editIsbn, newQuantity, newTitle, newAuthor);
                     break;
 
                 case 4:
@@ -71,11 +76,11 @@ public class LibrarySystem {
                 case 5:
                     System.out.print("Enter patron name: ");
                     String patronName = scanner.nextLine();
+                    System.out.print("Enter patron contact: ");
+                    String patronContact = scanner.nextLine();
                     System.out.print("Enter patron ID: ");
                     int patronId = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.print("Enter patron contact: ");
-                    String patronContact = scanner.nextLine();
                     patronManager.registerPatron(patronName, patronId, patronContact);
                     break;
                 
@@ -83,10 +88,12 @@ public class LibrarySystem {
                     System.out.print("Enter patron ID: ");
                     int editPatronId = scanner.nextInt();
                     scanner.nextLine();
+                    System.out.print("Enter new name: ");
+                    String newName = scanner.nextLine();
                     System.out.print("Enter new contact: ");
                     String newContact = scanner.nextLine();
 
-                    patronManager.editPatron(editPatronId, newContact);
+                    patronManager.editPatron(editPatronId, newContact, newName);
                     break;
 
                 case 7:
@@ -115,7 +122,7 @@ public class LibrarySystem {
                     System.out.print("Enter patron id: ");
                     int returnPatronId = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.print("Enter book name");
+                    System.out.print("Enter book name: ");
                     String returnTitle = scanner.nextLine();
                     library.returnBook(returnPatronId, returnTitle);
                     break;

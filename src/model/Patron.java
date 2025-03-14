@@ -26,5 +26,9 @@ public class Patron {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     
 }
